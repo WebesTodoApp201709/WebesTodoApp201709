@@ -1,6 +1,7 @@
 ﻿
 @{
     Layout = null;
+    List<string> bevasarloLista = (List<string>)ViewData["bevasarloLista"];
 }
 
 <!DOCTYPE html>
@@ -12,7 +13,12 @@
 </head>
 <body>
     <div>
-        Első ASP.NET MVC alkalmazásunk első oldala
+        <ul>
+            @foreach (var elem in bevasarloLista)
+            {
+                <li>@elem</li>
+            }
+        </ul>
     </div>
 </body>
 </html>

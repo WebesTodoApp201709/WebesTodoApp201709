@@ -12,3 +12,7 @@
 - ASP.NET MVC: névkonvenció alapú, a könyvtárak nevei és az állományok nevei egy elpőre meghatározott konvenciót követnek, a működésük ebből következik.
 - Egy megjelenítőoldal készítése
 - követelmények meghatározása (specifikáció)
+- A Model bevezetése
+  - szükségünk van egy felsorolásra, amit a programunk valahol előállít (változó)
+  - az adatokat "el kell juttatni" a nézetre
+  - majd az adatokat a nézetünk megfelelő helyén meg kell jeleníteni.
