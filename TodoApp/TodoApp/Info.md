@@ -4,6 +4,11 @@
   - html állományok előállítása és eljuttatása a felhasználó (Internet) böngészőjébe, ami megjeleníti és a felhasználó számára választási lehetőségeket ad.
   - amikor a html állományt előállító gép és a böngészőt futtató gép nem ugyanaz, akkor kell valami, ami az egyikről segít a másik gépet elérni. Ez a http protokoll [wikipédia link](https://hu.wikipedia.org/wiki/HTTP)
     - Négy eszköz: kérés, tartalom, fejléc, végállapot
-- MVC alkalmazásfejlesztés
+- MVC alkalmazásfejlesztés: Model-View-Controller
+  - a fejlesztőkörnyezetünk három fontos szereplőt azonosít és különböztet meg.
+  - vezérlő (Controller): Minden kérés hozzá érkezik, a feladata a kérés kiszolgálása, vagy a kiszolgáláshoz szükséges feladatok delegálása, majd a feladatok elvégzésével a végeredmény továbbítása a kérő felé. 
+  - adatok (Model) adatok köre, létrehozása, kiszámolása, előállítása, transzformációja, a kész adatok szolgáltatása a másik két szereplőnek
+  - megjelenítés (View) a feladata a kinézethez szükséges elemek meghatározása, létrehozása, előállítása, módosítása
+- ASP.NET MVC: névkonvenció alapú, a könyvtárak nevei és az állományok nevei egy elpőre meghatározott konvenciót követnek, a működésük ebből következik.
 - Egy megjelenítőoldal készítése
 - követelmények meghatározása (specifikáció)
