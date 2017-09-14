@@ -21,4 +21,36 @@
 ### IIS (Internet Information Server)
 - ha élesben akarjuk az alkalmazásunkat futtatni, akkor a szervergépre telepíteni kell.
 - a fejlesztő gépre a Visual Studio telepítése automatikusan telepít egy IIS Express nevű alkalmazást, ami az IIS fejlesztési célokra átalakított/lebutított egy felhasználós változata.
-- 
+
+## Egy HTTP kérés kiszolgálása
+
+```
+
+                                              +-------------------------------------------------+
+   +-------------------+                      |  IIS (TodoApp)                                  |
+   | Böngésző          |                      |-------------------------------------------------|
+   |-------------------|                      |                                                 |
+   |                   |   HTTP GET           |  Alkalmazás címe:http://localhost:52409/        |
+   |                   | +------------------> |                                                 |
+   |                   |                      |  A kérés az alkalmazáson belül: /Home/Index     |
+   |                   |   HTML állomány      |                                                 |
+   |                   |<--------------------+|                                                 |
+   |                   |                     ||   Az alkalmazáson belüli /Home jelenti az       |
+   |                   |                     ||   Home vezérlőt (HomeController)                |
+   |                   |                     ||                                                 |
+   |                   |                     ||   A második Index jelenti a vezérlő megfelelő   |
+   +-------------------+                     ||   függvényének a nevét                          |
+                                             ||                                                 |
+                                             ||   A munkavégző függvény megnevezése: Action     |
+                                             ||                                                 |
+                                             ||   Az Action a munka elvégzője, létrehozza az    |
+                                             ||   adatokat, megkeresi a megfelelő nézetet (View)|
+                                             ||   és az adatokat és a végrehajtást átadja ennek |
+                                             ||   a nézetnek                                    |
+                                             ||                                                 |
+                                             ||   A nézet az adatok segítvégével generálja a    |
+                                             +|   HTML állományt, amit visszaküld a böngészőnek |
+                                              |                                                 |
+                                              |                                                 |
+                                              +-------------------------------------------------+ 
+```
