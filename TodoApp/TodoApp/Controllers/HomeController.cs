@@ -18,10 +18,9 @@ namespace TodoApp.Controllers
             bevasarloLista.Add("Olaj");
             bevasarloLista.Add("Marhahús");
 
-            //feltesszük egy nézetre menő vonatra az adatainkat
-            ViewData["bevasarloLista"] = bevasarloLista;
-
-            return View();
+            //Az így előállított adatokat (==model) átadjuk a nézetnek
+            return View(bevasarloLista);
         }
+
     }
 }

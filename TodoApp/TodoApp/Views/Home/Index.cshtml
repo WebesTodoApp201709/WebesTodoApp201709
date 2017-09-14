@@ -1,7 +1,13 @@
-﻿
+﻿@*itt megmondjuk, hogy milyen típusú adatot várunk az Action-től*@
+@model List<string> 
+@*
+    innentől van egy olyan nevű változónk, hogy Model, és a típusa pedig List<string>
+    ezzel egyenértékű, mintha létrehoztunk volna egy ilyen függvényt:
+    View(List<string> Model)
+*@
+
 @{
     Layout = null;
-    List<string> bevasarloLista = (List<string>)ViewData["bevasarloLista"];
 }
 
 <!DOCTYPE html>
@@ -14,7 +20,7 @@
 <body>
     <div>
         <ul>
-            @foreach (var elem in bevasarloLista)
+            @foreach (var elem in Model)
             {
                 <li>@elem</li>
             }
