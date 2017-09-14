@@ -16,3 +16,9 @@
   - szükségünk van egy felsorolásra, amit a programunk valahol előállít (változó)
   - az adatokat "el kell juttatni" a nézetre
   - majd az adatokat a nézetünk megfelelő helyén meg kell jeleníteni.
+
+## Alkalmazás futtatása
+### IIS (Internet Information Server)
+- ha élesben akarjuk az alkalmazásunkat futtatni, akkor a szervergépre telepíteni kell.
+- a fejlesztő gépre a Visual Studio telepítése automatikusan telepít egy IIS Express nevű alkalmazást, ami az IIS fejlesztési célokra átalakított/lebutított egy felhasználós változata.
+- 
