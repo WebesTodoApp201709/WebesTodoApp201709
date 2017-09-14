@@ -22,7 +22,7 @@
 - ha élesben akarjuk az alkalmazásunkat futtatni, akkor a szervergépre telepíteni kell.
 - a fejlesztő gépre a Visual Studio telepítése automatikusan telepít egy IIS Express nevű alkalmazást, ami az IIS fejlesztési célokra átalakított/lebutított egy felhasználós változata.
 
-## Egy HTTP kérés kiszolgálása
+## Egy HTTP kérés kiszolgálása (adatok szolgáltatása a felhasználó felé)
 
 ```
 
@@ -82,3 +82,13 @@ Ez a kódban a következő utat járja be:
 
 ```
 
+## Adatok szállítása a felhasználótól az alkalmazásig
+
+- Az adatok szállítására a felhasználótól az alkalmazásunkig a kérésben van lehetőségünk
+- A vizsgálathoz létrehozzuk a világ legegyszerűbb űrlapját
+
+![beviteli űrlap](kepernyo01.png)
+
+A feladat pedig, hogy hozzunk létre egy beviteli mezőt és egy gombot, amivel egy feladatot fel tudunk küldeni a szerverre
+
+## Querystring-gel

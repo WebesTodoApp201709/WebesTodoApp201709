@@ -42,6 +42,18 @@ namespace TodoApp.Controllers
                 }
             );
 
+            if (Request.QueryString.AllKeys.Contains("Megnevezes"))
+            {
+                bevasarloLista.Add(
+                    new Feladat
+                    {
+                        Megnevezes = Request.QueryString["Megnevezes"],
+                        Elvegezve = false
+                    }
+                );
+            }
+
+
             //Az így előállított adatokat (==model) átadjuk a nézetnek
             return View(bevasarloLista);
         }

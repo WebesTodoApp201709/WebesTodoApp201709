@@ -115,6 +115,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="kepernyo01.png" />
     <Content Include="packages.config" />
     <Content Include="Info.md" />
     <Content Include="Scripts\bootstrap.js" />
