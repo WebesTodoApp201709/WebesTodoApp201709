@@ -1,5 +1,5 @@
 ﻿@*itt megmondjuk, hogy milyen típusú adatot várunk az Action-től*@
-@model List<string> 
+@model List<TodoApp.Controllers.Feladat> 
 @*
     innentől van egy olyan nevű változónk, hogy Model, és a típusa pedig List<string>
     ezzel egyenértékű, mintha létrehoztunk volna egy ilyen függvényt:
@@ -22,7 +22,14 @@
         <ul>
             @foreach (var elem in Model)
             {
-                <li>@elem</li>
+                if (elem.Elvegezve)
+                {
+                    <li><strike>@elem.Megnevezes</strike></li>
+                }
+                else
+                {
+                    <li>@elem.Megnevezes</li>
+                }
             }
         </ul>
     </div>
