@@ -1,4 +1,4 @@
-﻿
+﻿@model TodoApp.Controllers.Feladat
 @{
     Layout = null;
 }
@@ -12,6 +12,26 @@
 </head>
 <body>
     <div> 
+@*a razor kódban a html kódban a segítséget a Html (és az Url) helper
+    adja nekünk. Ez teszi lehetővé, hogy ne tiszta html kódot kelljen írnunk,
+    hanem a megkapott model köré tudjuk szervezni a cshtml kódunkat.*@
+
+@using (Html.BeginForm())
+{
+    @Html.TextBoxFor(m => m.Megnevezes)
+
+    <button>Új elem rögzítése</button>
+}
+
+@Html.ActionLink("Mégsem", "Index")
+
+@*<form action="/Home/Add" method="post">
+    <input type="text" name="Megnevezes" value="" />
+    <button>Felvitel </button>
+</form>*@
     </div>
 </body>
 </html>
+
+
+

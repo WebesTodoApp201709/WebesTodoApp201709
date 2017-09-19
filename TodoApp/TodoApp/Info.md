@@ -127,3 +127,25 @@ Akkor a gomb megnyomásakor a böngésző az url mögé un. QueryString paramét
 
 - a bevitt adatok nem őrződnek meg a szerveren két kérés között, (nincs un. perzisztens adatunk)
 
+
+## Alkalmazás váz
+- A listaoldalon a következő lehetőségek elérhetőek
+  - új elem felvitele
+  - meglévő elem módosítása
+  - meglévő elem törlése
+  - meglévő elem elvégzésének a jelzése
+
+- Az egyes lehetőségek linkek segítségével elérhetőek
+- Ha egy-egy linkra kattintunk, akkor az adott feladattal kapcsolatos képernyőre/oldalra kerülünk
+
+### Adatbevitel az ASP.NET MVC-ben
+- Az általános adatbeviteli megoldás ASP.NET MVC alkalmazásoknál: Két Action és a hozzájuk tartozó 1 db View
+- Az adatbevitelhez szükséges képernyőt egy Action szolgáltatja, ami a GET kérésekre válaszol.
+- Az adatbevitelt követő POST egy ugyanolyan nevű, de a POST-okra szakosodott Action-re küldi az adatokat.
+
+### Adatok ellenőrzése (Validálás)
+Követeljük meg, hogy a feladat megnevezése ne lehessen üres
+
+## Adatok perzisztens tárolása
+Az egyes böngésző kérések között megőrzött adattárolást hívják perzisztens adatoknak.
+
