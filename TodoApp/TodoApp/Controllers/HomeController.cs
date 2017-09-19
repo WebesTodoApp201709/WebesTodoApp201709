@@ -3,57 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TodoApp.Models;
 
 namespace TodoApp.Controllers
 {
     public class HomeController : Controller
     {
+        //biztosítjuk az adatbázis hozzáférést a vezérlőnek
+        TodoAppContext db = new TodoAppContext();
+
         // GET: Index
         public ActionResult Index()
         {
-
-            var bevasarloLista = new List<Feladat>();
-            bevasarloLista.Add(
-                new Feladat
-                {
-                    Megnevezes = "Hagyma",
-                    Elvegezve = true
-                });
-
-            bevasarloLista.Add(
-                new Feladat
-                {
-                    Megnevezes = "Pirospaprika",
-                    Elvegezve = true
-                });
-
-            bevasarloLista.Add(
-                new Feladat
-                {
-                    Megnevezes = "Olaj",
-                    Elvegezve = false
-                });
-
-            bevasarloLista.Add(
-                new Feladat
-                {
-                    Megnevezes = "Marhahús",
-                    Elvegezve = false
-                }
-            );
-
-            if (Request.QueryString.AllKeys.Contains("Megnevezes"))
-            {
-                bevasarloLista.Add(
-                    new Feladat
-                    {
-                        Megnevezes = Request.QueryString["Megnevezes"],
-                        Elvegezve = false
-                    }
-                );
-            }
-
-
+            var bevasarloLista = db.Feladatok.ToList();
             //Az így előállított adatokat (==model) átadjuk a nézetnek
             return View(bevasarloLista);
         }
@@ -90,6 +52,8 @@ namespace TodoApp.Controllers
             //Az adatok rendben vannak, akkor új elem felvitele
             //todo: perzisztens adattárolás
 
+            db.Feladatok.Add(feladat);
+            db.SaveChanges();
 
             return RedirectToAction("Index");
         }

@@ -5,6 +5,8 @@ namespace TodoApp.Controllers
 {
     public class Feladat
     {
+        public int Id { get; set; }
+
         [Required] //ebben kötelezően kell lennie adatnak
         [MinLength(3)] //legalább három karakter hosszú szöveget kell tartalmaznia
         [MaxLength(5)] //legfeljebb öt karakter hosszú szöveget kell tartalmaznia
