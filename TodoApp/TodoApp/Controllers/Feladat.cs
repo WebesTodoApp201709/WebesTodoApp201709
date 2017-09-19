@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace TodoApp.Controllers
 {
@@ -7,6 +8,7 @@ namespace TodoApp.Controllers
         [Required] //ebben kötelezően kell lennie adatnak
         [MinLength(3)] //legalább három karakter hosszú szöveget kell tartalmaznia
         [MaxLength(5)] //legfeljebb öt karakter hosszú szöveget kell tartalmaznia
+        [DisplayName("A feladat megnevezése")]
         public string Megnevezes { get; set; } //adattulajdonság (property)
         public bool Elvegezve; //adatmező (field)
 
