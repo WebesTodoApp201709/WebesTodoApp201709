@@ -171,3 +171,6 @@ vagy
 ```
 cinst sql-server-express
 ```
+
+# Házi feladat:
+módosítás és törlés képernyők létrehozása
