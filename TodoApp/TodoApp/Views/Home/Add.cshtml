@@ -16,11 +16,19 @@
     adja nekünk. Ez teszi lehetővé, hogy ne tiszta html kódot kelljen írnunk,
     hanem a megkapott model köré tudjuk szervezni a cshtml kódunkat.*@
 
+@Html.ValidationSummary()
 @using (Html.BeginForm())
 {
-    @Html.TextBoxFor(m => m.Megnevezes)
-
-    <button>Új elem rögzítése</button>
+    <div>
+        @Html.LabelFor(m => m.Megnevezes)
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.Megnevezes)
+        @Html.ValidationMessageFor(m=>m.Megnevezes)
+    </div>
+    <div>
+        <button>Új elem rögzítése</button>
+    </div>
 }
 
 @Html.ActionLink("Mégsem", "Index")

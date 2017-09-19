@@ -144,8 +144,30 @@ Akkor a gomb megnyomásakor a böngésző az url mögé un. QueryString paramét
 - Az adatbevitelt követő POST egy ugyanolyan nevű, de a POST-okra szakosodott Action-re küldi az adatokat.
 
 ### Adatok ellenőrzése (Validálás)
-Követeljük meg, hogy a feladat megnevezése ne lehessen üres
+Követeljük meg, hogy a feladat megnevezése ne lehessen üres.
+
+Ehhez az ASP.NET beépített szolgáltatásait használjuk.
+
+- Az adatmodell-en annotációval tudjuk a feltételeket megadni [doksi](https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6)
+- Az adatmodellben property-t kell az adatok tárolására használni
+- így a modell köré tudjuk építeni a nézetünket @Html.TextBoxFor(m=>m.Megnevezes), @Html.LabelFor(m=>m.Megnevezes)
+- a modell-t át tudjuk venni a POST-ra váró Action paraméterlistájában
+- a modell állapotát ellenőrizni tudjuk az Action-ben: ModelState.IsValid
+- ha nem jók az adatok, akkor vissza tudjuk küldeni a felhasználónak egy **return View(model);** sorral
+- a validációs hibaüzenetet ki tudjuk iratni: @Html.ValidationSummary(), @Html.ValidationMessageFor(m=>m.Megnevezes)
 
 ## Adatok perzisztens tárolása
 Az egyes böngésző kérések között megőrzött adattárolást hívják perzisztens adatoknak.
+Erre nagyágyúval fogunk lőni: SQL szerveren tároljuk majd az adatainkat
 
+Ehhez telepíteni kell egy MS SQL szerver express-t:
+
+```
+choco install sql-server-express
+```
+
+vagy 
+
+```
+cinst sql-server-express
+```

@@ -78,13 +78,17 @@ namespace TodoApp.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost] //csak POST kérésre reagál
-        public ActionResult Add(string megnevezes)
+        public ActionResult Add(Feladat feladat)
         {
-            //todo: perzisztens adattárolás
 
             //adatok ellenőrzése
-            //ha nem jó, akkor újra bekérni
-            //ha rendben vannak, akkor új elem felvitele
+            if (!ModelState.IsValid)
+            { //az adatok nincsenek rendben: vissza kell küldeni őket módosításra
+                return View(feladat);
+            }
+
+            //Az adatok rendben vannak, akkor új elem felvitele
+            //todo: perzisztens adattárolás
 
 
             return RedirectToAction("Index");
