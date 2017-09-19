@@ -58,5 +58,11 @@ namespace TodoApp.Controllers
             return View(bevasarloLista);
         }
 
+        public ActionResult Add(string megnevezes)
+        {
+
+            return View();
+        }
+
     }
 }

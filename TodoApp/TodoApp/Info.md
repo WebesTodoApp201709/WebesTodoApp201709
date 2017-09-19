@@ -48,10 +48,10 @@
                                              ||   és az adatokat és a végrehajtást átadja ennek |
                                              ||   a nézetnek                                    |
                                              ||                                                 |
-                                             ||   A nézet az adatok segítvégével generálja a    |
+                                             ||   A nézet az adatok segítségével generálja a    |
                                              +|   HTML állományt, amit visszaküld a böngészőnek |
-                                              |                                                 |
-                                              |                                                 |
+                                              |   A nézet állománya cshtml, ami egy keveréke    |
+                                              |   a c# és a html nyelvnek, és a neve: RAZOR     |
                                               +-------------------------------------------------+ 
 ```
 
@@ -92,3 +92,38 @@ Ez a kódban a következő utat járja be:
 A feladat pedig, hogy hozzunk létre egy beviteli mezőt és egy gombot, amivel egy feladatot fel tudunk küldeni a szerverre
 
 ## Querystring-gel
+Ha egyszerűen egy html űrlapot készítünk, és a form tag-nek nem adunk meg paramétereket és az űrlapon vannak:
+- input mezők
+- és egy gomb
+
+```
+<form>
+    <input type="text" name="Megnevezes" value="" />
+    <input name="Elvegezve" />
+    <button>Felvitel</button>
+</form>
+```
+
+Akkor a gomb megnyomásakor a böngésző az url mögé un. QueryString paramétereket "ragaszt" és így küldi a következő kérését a szerver felé GET kéréssel.
+
+### Problémák:
+- ugyanarra az action-re megy a kérés, mint az előző, ezt meg tudjuk oldani a *form* tag **action** paraméterével:
+
+```
+  <form action="/Home/Add">
+    ...
+  </form>
+```
+
+- webes konvenció, hogy a GET típusú kérés nem változtat adatot a szerveren, me tudom oldani a *form* tag **method** paraméterével:
+
+```
+  <form action="/Home/Add" method="post">
+    ...
+  </form>
+```
+
+- Új Probléma: Post esetén az adatok NEM QueryString-ként mennek a szerver felé, hanem Form Data formában. Ezt megoldja az ASP.NET MVC: az Action-nél megadhatjuk a paramétert, amibe automatikusan bekerül a böngészőből érkező adat.
+
+- a bevitt adatok nem őrződnek meg a szerveren két kérés között, (nincs un. perzisztens adatunk)
+
