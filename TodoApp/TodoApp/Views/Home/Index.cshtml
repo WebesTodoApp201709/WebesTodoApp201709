@@ -10,43 +10,26 @@
     ViewBag.Title = "Feladatlista";
 }
 
-    <div>
-        <ul>
-            @foreach (var elem in Model)
-            {
-                if (elem.Elvegezve)
+    <div class="row">
+        <div class="col col-sm-4">
+            <ul class="list-group">
+                @foreach (var elem in Model)
                 {
-                    <li><strike>@elem.Megnevezes</strike> @Html.ActionLink("Módosítás", "Edit", new { id = elem.Id }) @Html.ActionLink("Törlés", "Delete", new { id = elem.Id })</li>
+                    if (elem.Elvegezve)
+                    {
+                        <li class="list-group-item"><strike>@elem.Megnevezes</strike> @Html.ActionLink("Módosítás", "Edit", new { id = elem.Id }) @Html.ActionLink("Törlés", "Delete", new { id = elem.Id })</li>
+                    }
+                    else
+                    {
+                        <li class="list-group-item">@elem.Megnevezes @Html.ActionLink("Módosítás", "Edit", new { id = elem.Id }) @Html.ActionLink("Törlés", "Delete", new { id = elem.Id })</li>
+                    }
                 }
-                else
-                {
-                    <li>@elem.Megnevezes @Html.ActionLink("Módosítás", "Edit", new { id = elem.Id }) @Html.ActionLink("Törlés", "Delete", new { id = elem.Id })</li>
-                }
-            }
-        </ul>
-
-        @*a razor kódban a html kódban a segítséget a Html (és az Url) helper
-        adja nekünk. Ez teszi lehetővé, hogy ne tiszta html kódot kelljen írnunk,
-        hanem a megkapott model köré tudjuk szervezni a cshtml kódunkat.*@
-
-
-        @*
-            Html-ben hivatkozást így készítünk
-            <a href="https://google.com">ez egy hivatkozás (link)</a>
-            <a href="/Home/Add">ez egy hivatkozás (link)</a>
-        *@
-
-        @*Razorban a segítség a következő
-            Ha külső hivatkozást címzünk, ami egy konkrét weboldal, akkor ez teljesen megfelelő
-            ha az alkalmásunk egyik Action-jét akarjuk meghivatkozni, akkor az útválasztást nem 
-            érdemes figyelmen kívül hagyni. Ezért:
-        *@
-
-        @*Mivel az Index és az Add ugyanazon a vezérlőn van, 
-        nincs szükség a vezérlő (HomeController) megadására
-        @Html.ActionLink("Új elem felvitele", "Add", "Home")
-        Elég megadni az Action-t:
-        *@
-
-        @Html.ActionLink("Új elem megadása", "Add")
+            </ul>
+        </div>
+        <div class="col col-sm-4">
+            @Html.ActionLink("Új elem megadása", "Add", null, new { @class = "btn btn-warning" })
+        </div>
+        <div class="col col-sm-4">
+            @Html.ActionLink("Új elem megadása", "Add", null, new { @class = "btn btn-warning" })
+        </div>
     </div>
