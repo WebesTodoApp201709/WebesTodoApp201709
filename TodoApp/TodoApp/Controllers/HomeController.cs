@@ -80,5 +80,24 @@ namespace TodoApp.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var model = db.Feladatok.Find(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Feladat feladat)
+        {
+            //nincs szükség validálásra, mert csak az id utazik fel, nem a teljes model
+
+            var model = db.Feladatok.Find(feladat.Id);
+            db.Feladatok.Remove(model);
+
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
     }
 }
