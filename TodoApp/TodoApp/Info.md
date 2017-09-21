@@ -172,5 +172,32 @@ vagy
 cinst sql-server-express
 ```
 
+Ha pedig management felületet szeretnénk a gépünkre, akkor chocolatey-vel a következő parancsot kell kiadni:
+
+```
+choco install sql-server-management-studio
+```
+
+```
+cinst sql-server-management-studio
+```
+
 # Házi feladat:
 módosítás és törlés képernyők létrehozása
+
+# Hibajelenségek
+## elindítás után megáll azonnal a webalkalmazás, ha Ctrl+F5-tel indítom, akkor pedig azt írja ki, hogy nem lehet elindítani az IIS Express-t
+Megoldás: a solution mappában (az .sln-t tartalmazó mappa) van egy rejtett **.vs** könyvtár. Ebben van egy **config** mappa, és ebben található egy **applicationhost.config** állomány. Ezt kell törölni, a visual studio-ból kilépni majd visszalépni.
+
+# Adatbázis kezelés EntityFramework Code First segítségével
+## Megközelítések
+- Data First
+- Model First 
+- Code First
+
+Ha nem adunk meg neki semmilyen egyéb paramétert, akkor a helyi gépen fogja létrehozni
+- vagy a *default instance*-on, 
+- vagy az sqlexpress nevű szerveren (.\sqlexpress)
+- vagy localdb-ként hozza létre
+
+TodoApp.Models.TodoAppContext néven, ami a Context osztályunk neve kiegészítve a névtér névvel.

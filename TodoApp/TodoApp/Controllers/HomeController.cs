@@ -50,9 +50,31 @@ namespace TodoApp.Controllers
             }
 
             //Az adatok rendben vannak, akkor új elem felvitele
-            //todo: perzisztens adattárolás
-
+            //perzisztens adattárolás
             db.Feladatok.Add(feladat);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var model = db.Feladatok.Find(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Feladat feladat)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(feladat);
+            }
+
+            var model = db.Feladatok.Find(feladat.Id);
+
+            model.Megnevezes = feladat.Megnevezes;
             db.SaveChanges();
 
             return RedirectToAction("Index");
