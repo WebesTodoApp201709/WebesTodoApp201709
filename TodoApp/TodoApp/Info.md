@@ -201,3 +201,10 @@ Ha nem adunk meg neki semmilyen egyéb paramétert, akkor a helyi gépen fogja l
 - vagy localdb-ként hozza létre
 
 TodoApp.Models.TodoAppContext néven, ami a Context osztályunk neve kiegészítve a névtér névvel.
+
+
+# Házi feladat
+A Feladat model-ben az **Elvégezve** mezőt alakítsuk át property-vé, és
+- töröljük az adatbázist, majd indítsuk el a programot és nézzük meg, hogy milyen adatbázist generál
+- a varázsló segítségével generáljunk Controllert View-kkal, és nézzük meg a létrejövő kódot.
+
