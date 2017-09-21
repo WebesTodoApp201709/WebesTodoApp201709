@@ -12,6 +12,12 @@ namespace TodoApp.Controllers
         //biztosítjuk az adatbázis hozzáférést a vezérlőnek
         TodoAppContext db = new TodoAppContext();
 
+        public ActionResult Tesztoldal()
+        {
+            return View();
+        }
+
+
         // GET: Index
         public ActionResult Index()
         {

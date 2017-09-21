@@ -208,3 +208,20 @@ A Feladat model-ben az **Elvégezve** mezőt alakítsuk át property-vé, és
 - töröljük az adatbázist, majd indítsuk el a programot és nézzük meg, hogy milyen adatbázist generál
 - a varázsló segítségével generáljunk Controllert View-kkal, és nézzük meg a létrejövő kódot.
 
+## Adatbázis folyamatos módosítása
+Code First Migrations
+
+Ha Code First módon építem az adatbázist, akkor nem tudok már az adatbázisban saját módosításokat végezni.
+
+
+## Nézetek általi generálás
+- először lefut a _ViewStart.cshtml
+- ő beállítja az alapértelmezett layout-ot: _Layout.cshtml
+- akárhány layout-om lehet, a nézet elején beállíthatom vagy letilthatom
+- megjelenítéskor 
+  - először lefut a nézet
+  - majd a layout (ha =null, akkor nem történik semmi)
+- és ezt a két végeredményt összekombinálja az ASP.NET (@RenderBody() a layout állományban)
+
+## Bootstrap
+http://getbootstrap.com/

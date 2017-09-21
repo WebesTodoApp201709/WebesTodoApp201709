@@ -155,6 +155,7 @@
     <Content Include="Views\Todo\Details.cshtml" />
     <Content Include="Views\Todo\Edit.cshtml" />
     <Content Include="Views\Todo\Index.cshtml" />
+    <Content Include="Views\Home\Tesztoldal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
